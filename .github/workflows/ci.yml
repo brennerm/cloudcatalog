@@ -24,6 +24,9 @@ jobs:
     - name: create production build
       run: npm run build
 
+    - name: install rsync
+      run: apt-get update && apt-get install -y rsync
+
     - name: deploy
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
