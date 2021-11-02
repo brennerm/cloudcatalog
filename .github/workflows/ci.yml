@@ -1,0 +1,31 @@
+name: build and deploy
+
+on:
+  push:
+    branches:
+    - main
+
+defaults:
+  run:
+    shell: bash
+    working-directory: webui
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: node:16.13
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install dependencies
+      run: npm install
+    
+    - name: create production build
+      run: npm run build
+
+    - name: deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages
+        folder: webui/dist
