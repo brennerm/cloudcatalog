@@ -23,10 +23,9 @@
             >brennerm</a
           >
         </p>
-        <p>Service <a href="" class="text-blue-700">missing?</a></p>
+        <p>Service <a href="https://github.com/brennerm/cloudcatalog/issues/new?assignees=&labels=&template=new-service.md&title=%5BNEW+SERVICE%5D" target="_blank" class="text-blue-700">missing?</a></p>
         <p class="">
-          <a href="" class="text-blue-700">cloudcatalog.dev</a> is not
-          associated with any cloud provider.
+          Cloud Catalog is not associated with any cloud provider.
         </p>
       </div>
     </div>
