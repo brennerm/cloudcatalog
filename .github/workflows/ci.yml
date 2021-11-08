@@ -7,6 +7,12 @@ on:
     paths:
     - "webui/**"
 
+  workflow_run:
+    workflows: ["scrape service data"]
+    branches: [main]
+    types:
+      - completed
+
 defaults:
   run:
     shell: bash
