@@ -32,7 +32,7 @@ jobs:
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add ../webui/src/assets/service_data.json
-        git commit -m "update service data @ $(date)"
+        git diff-index --quiet HEAD || git commit -m "update service data @ $(date)"
 
     - name: push service data changes
       uses: ad-m/github-push-action@v0.6.0
