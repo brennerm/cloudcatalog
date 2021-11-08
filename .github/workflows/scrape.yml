@@ -1,0 +1,41 @@
+name: scrape service data
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 0,3"
+    
+defaults:
+  run:
+    shell: bash
+    working-directory: scraper
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    container: python:3.8
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: install pipenv
+      run: pip install pipenv
+    
+    - name: install dependencies
+      run: pipenv install
+
+    - name: scrape service data
+      run: pipenv run python get_service_data.py ../webui/src/assets/service_data.json
+
+    - name: commit service data
+      run: |
+        git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add ../webui/src/assets/service_data.json
+        git commit -m "update service data @ $(date)"
+
+    - name: push service data changes
+      uses: ad-m/github-push-action@v0.6.0
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
