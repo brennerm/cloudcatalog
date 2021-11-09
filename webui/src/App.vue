@@ -51,10 +51,16 @@ export default {
       searchQuery: "",
       providerToggles: {
         aws: true,
+        alibaba: true,
         azure: true,
         gcp: true,
       },
       providers: {
+        alibaba: {
+          name: "Alibaba Cloud",
+          icon: "https://www.vectorlogo.zone/logos/alibabacloud/alibabacloud-icon.svg",
+          primaryColor: "#FF6701",
+        },
         aws: {
           name: "Amazon Web Services",
           icon: "https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/aws.svg",
