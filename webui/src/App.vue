@@ -54,6 +54,7 @@ export default {
         alibaba: true,
         azure: true,
         gcp: true,
+        ibm: true,
       },
       providers: {
         alibaba: {
@@ -75,6 +76,11 @@ export default {
           name: "Google Cloud Platform",
           icon: "https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/google-cloud.svg",
           primaryColor: "#0F9D58",
+        },
+        ibm: {
+          name: "IBM Cloud",
+          icon: "https://www.vectorlogo.zone/logos/ibm_cloud/ibm_cloud-icon.svg",
+          primaryColor: "#008DEE",
         },
       },
     };
