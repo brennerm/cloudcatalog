@@ -64,6 +64,7 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'cloudcatalog_scraper.pipelines.DuplicatesPipeline': 300,
+    'cloudcatalog_scraper.pipelines.NullDescriptionPipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)

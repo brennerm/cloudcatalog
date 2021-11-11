@@ -19,7 +19,8 @@ spider_cls = [spider_loader.load(name) for name in spider_loader.list()]
 for spider in spider_cls:
   process.crawl(scrapy.crawler.Crawler(spider, settings={
     "ITEM_PIPELINES": {
-      'cloudcatalog_scraper.pipelines.DuplicatesPipeline': 300
+      'cloudcatalog_scraper.pipelines.DuplicatesPipeline': 300,
+      'cloudcatalog_scraper.pipelines.NullDescriptionPipeline': 400
     },
     "FEEDS": {
         f"{spider.name}.json": {

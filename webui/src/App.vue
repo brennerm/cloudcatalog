@@ -53,32 +53,43 @@ export default {
         aws: true,
         alibaba: true,
         azure: true,
+        digitalocean: true,
         gcp: true,
         ibm: true,
       },
       providers: {
         alibaba: {
           name: "Alibaba Cloud",
+          short_name: "Alibaba",
           icon: "https://www.vectorlogo.zone/logos/alibabacloud/alibabacloud-icon.svg",
           primaryColor: "#FF6701",
         },
         aws: {
           name: "Amazon Web Services",
+          short_name: "AWS",
           icon: "https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/aws.svg",
           primaryColor: "#FF9900",
         },
         azure: {
           name: "Microsoft Azure",
+          short_name: "Azure",
           icon: "https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/azure.svg",
           primaryColor: "#008AD7",
         },
+        digitalocean: {
+          name: "DigitalOcean",
+          icon: "https://cdn.icon-icons.com/icons2/2699/PNG/512/digitalocean_logo_icon_169273.png",
+          primaryColor: "#0069FF",
+        },
         gcp: {
           name: "Google Cloud Platform",
+          short_name: "GCP",
           icon: "https://uxwing.com/wp-content/themes/uxwing/download/10-brands-and-social-media/google-cloud.svg",
           primaryColor: "#0F9D58",
         },
         ibm: {
           name: "IBM Cloud",
+          short_name: "IBM",
           icon: "https://www.vectorlogo.zone/logos/ibm_cloud/ibm_cloud-icon.svg",
           primaryColor: "#008DEE",
         },

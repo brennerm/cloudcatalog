@@ -2,9 +2,6 @@ import scrapy
 from cloudcatalog_scraper.items import CloudServiceItem
 import cloudcatalog_scraper.common as common
 
-def normalize(name):
-  return name.lower().replace(' ', '_').replace('(', '').replace(')', '')
-
 class AzureSpider(scrapy.Spider):
   name = 'azure'
   start_urls = ['https://azure.microsoft.com/en-us/services/']

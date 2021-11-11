@@ -8,7 +8,6 @@
         bg-transparent
         border-t border-b border-gray-400
         font-bold
-        uppercase
         text-sm
         outline-none
         focus:outline-none
@@ -33,7 +32,7 @@
       @click="this.$emit('providerToggleChanged', name, !value)"
       type="button"
     >
-      {{ name }}
+      {{ providers[name].short_name ? providers[name].short_name : providers[name].name }}
     </button>
   </div>
 </template>

@@ -22,3 +22,10 @@ class DuplicatesPipeline:
         else:
             self.ids_seen.add(item.key)
             return item
+
+class NullDescriptionPipeline:
+    def process_item(self, item, spider):
+        if item.short_description is None:
+            item.short_description = ""
+
+        return item
