@@ -117,13 +117,40 @@ export default {
       );
     },
   },
+  beforeMount() {
+    var searchParams = new URLSearchParams(window.location.search);
+
+    if (searchParams.has("search")) {
+      this.searchQuery = searchParams.get("search")
+    }
+
+    for (var provider in this.providerToggles) {
+      if (searchParams.has(provider) && searchParams.get(provider) === "false") {
+        this.providerToggles[provider] = false
+      }
+    }
+  },
   methods: {
     queryChanged: function (value) {
       this.searchQuery = value;
+      this.setQueryParam("search", value)
     },
     providerToggleChanged: function (provider, value) {
       this.providerToggles[provider] = value;
+      this.setQueryParam(provider, value ? null : "false")
     },
+    setQueryParam: function(key, value) {
+      var searchParams = new URLSearchParams(window.location.search);
+
+      if((value === "" || value === null) && searchParams.has(key)){
+        searchParams.delete(key);
+      } else {
+        searchParams.set(key, value);
+      }
+
+      var newRelativePathQuery = window.location.pathname + (searchParams.toString() ? '?' + searchParams.toString() : "");
+      history.pushState(null, '', newRelativePathQuery);
+    }
   },
 };
 </script>
