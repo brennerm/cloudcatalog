@@ -38,8 +38,24 @@
         focus:outline-none focus:ring
         w-full
         pl-10
+        pr-14
       "
     />
+    <span class="
+      z-10
+      leading-snug
+      font-normal
+      right-5
+      text-center text-white
+      absolute
+      bg-gray-500
+      rounded-full
+      text-xs
+      mt-3
+      py-0.5
+      px-2">
+      {{ numberOfResults }}
+    </span>
   </div>
 </template>
 
@@ -50,6 +66,7 @@ export default {
   name: "SearchBox",
   props: {
     query: String,
+    numberOfResults: Number,
   },
   components: {
     SearchIcon

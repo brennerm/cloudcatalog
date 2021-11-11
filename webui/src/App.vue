@@ -8,7 +8,7 @@
         :providers="this.providers"
         @providerToggleChanged="this.providerToggleChanged"
       />
-      <SearchBox :query="this.searchQuery" @queryChanged="this.queryChanged"/>
+      <SearchBox :query="this.searchQuery" :numberOfResults="this.filteredServiceData.length" @queryChanged="this.queryChanged"/>
     </div>
     </div>
     <ServiceGrid :serviceData="this.filteredServiceData" :providers="this.providers" class="pt-3 pb-3 flex-grow"/>
