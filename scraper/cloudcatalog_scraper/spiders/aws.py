@@ -13,5 +13,5 @@ class AwsSpider(scrapy.Spider):
         f'{self.name}_{common.normalize(name)}',
         name,
         service.css('a > cite::text').get(),
-        service.css('a::attr(href)').get()
+        response.urljoin(service.css('a::attr(href)').get())
       )
