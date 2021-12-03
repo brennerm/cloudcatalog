@@ -17,7 +17,7 @@
           <span class="text-red-600"><HeartIcon class="inline w-4 h-4" /></span>
           by
           <a
-            href="https://brennerm.github.io/about.html"
+            href="https://shipit.dev/about.html"
             class="text-blue-700"
             target="_blank"
             >brennerm</a
